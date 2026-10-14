@@ -245,9 +245,9 @@ mostrarTareas();
 
 
 const sonidos = {
-    lluvia: new Audio("audios/lluvia.mp3"),
-    cafeteria: new Audio("audios/cafeteria.mp3"),
-    lofi: new Audio("audios/lofi.mp3")
+    lluvia: new Audio("FocusBunny/audios/lluvia.mp3"),
+    cafeteria: new Audio("FocusBunny/audios/cafeteria.mp3"),
+    lofi: new Audio("FocusBunny/audios/lofi.mp3")
 };
 
 let sonidoActual = null;
