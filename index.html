@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Bunny 🐰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="encabezado">
+            <div class="logo">🐰</div>
+            <h1>Focus Bunny</h1>
+            <p>Un pasito a la vez, tú puedes. ✨</p>
+        </header>
+
+        <section class="panel pagina" id="pagina-temporizador">
+            <div class="conejito">🐇</div>
+
+            <h2>Hora de concentrarse</h2>
+            <p class="subtitulo">Respira, enfócate y comienza.</p>
+
+            <div class="temporizador" id="temporizador">25:00</div>
+
+<div class="progreso-temporizador"
+     role="progressbar"
+     aria-label="Progreso del temporizador"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="100">
+    <div id="barraProgreso"></div>
+</div>
+<p id="textoProgreso">100% del tiempo restante</p>
+
+<div class="modos">
+    <button onclick="cambiarModo(25)">Enfoque</button>
+    <button onclick="cambiarModo(5)">Descanso corto</button>
+    <button onclick="cambiarModo(15)">Descanso largo</button>
+</div>
+
+            <div class="controles">
+                <button id="iniciar" onclick="iniciarTemporizador()">▶ Iniciar</button>
+                <button onclick="pausarTemporizador()">Ⅱ Pausar</button>
+                <button onclick="reiniciarTemporizador()">↻ Reiniciar</button>
+            </div>
+
+            <p id="mensaje">Tu próxima gran idea comienza aquí. 💙</p>
+        </section>
+
+<section class="panel tareas pagina" id="pagina-tareas">
+    <h2>📚 Mi lista de tareas</h2>
+    <p class="subtitulo">Pequeños pasos, grandes logros.</p>
+
+    <form id="formTareas">
+        <input
+            type="text"
+            id="nuevaTarea"
+            placeholder="¿Qué necesitas hacer?"
+            maxlength="120"
+            required
+        >
+        <button type="submit">+ Agregar</button>
+    </form>
+
+    <ul id="listaTareas"></ul>
+
+    <p id="contadorTareas">0 tareas completadas</p>
+</section>
+
+
+        <section class="panel sonidos pagina" id="pagina-sonidos">
+            <h2>🎧 Inmersión Total</h2>
+            <p class="subtitulo">Elige tu ambiente de concentración.</p>
+
+            <div class="opciones-sonido">
+                <button type="button" id="btnLluvia" onclick="alternarSonido('lluvia')">
+                    🌧️ Lluvia
+                </button>
+
+                <button type="button" id="btnCafeteria" onclick="alternarSonido('cafeteria')">
+                    ☕ Cafetería
+                </button>
+
+                <button type="button" id="btnLofi" onclick="alternarSonido('lofi')">
+                    🎧 Lo-fi
+                </button>
+            </div>
+
+            <div class="control-volumen">
+                <label for="volumenSonido">Volumen general</label>
+                <span id="valorVolumen">35%</span>
+                <input
+                    id="volumenSonido"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="35"
+                >
+            </div>
+
+            <div class="estado-audio">
+                <span class="indicador-audio" id="indicadorAudio"></span>
+                <p id="estadoSonido" aria-live="polite">
+                    Ningún sonido está activo.
+                </p>
+            </div>
+
+            <button type="button" id="btnDetenerSonidos" onclick="detenerSonido()">
+                ⏹ Detener todos los sonidos
+            </button>
+        </section>
+
+<section class="panel pagina" id="pagina-logros">
+    <div class="conejito">🐰</div>
+
+    <h2>Mis logros</h2>
+    <p class="subtitulo">Cada pequeño paso cuenta. 💙</p>
+
+    <div class="estadisticas">
+        <div class="tarjeta-estadistica">
+            <span>🍅</span>
+            <h3 id="totalSesiones">0</h3>
+            <p>Sesiones completadas</p>
+        </div>
+
+        <div class="tarjeta-estadistica">
+            <span>⏱️</span>
+            <h3 id="totalMinutos">0</h3>
+            <p>Minutos de concentración</p>
+        </div>
+    </div>
+
+    <h3>✨ Mis insignias</h3>
+    <div id="listaInsignias" class="lista-insignias"></div>
+</section>
+
+        <footer>
+            Hecho con cariño para tus días de estudio
+        </footer>
+
+<nav class="navegacion" aria-label="Navegación de Focus Bunny">
+    <button type="button" onclick="cambiarPagina(-1)" aria-label="Página anterior">
+        ❮ Anterior
+    </button>
+
+    <span id="indicadorPagina">1 / 4</span>
+
+    <button type="button" onclick="cambiarPagina(1)" aria-label="Página siguiente">
+        Siguiente ❯
+    </button>
+</nav>
+   
+ </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
